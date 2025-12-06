@@ -1,0 +1,19 @@
+
+<div style="padding: 40px; max-width: 500px; margin: auto;">
+  <h2>Login MetaMask → Spring Authorization Server</h2>
+
+  <button (click)="connectWallet()">Connect Wallet</button>
+  <p *ngIf="wallet">Wallet: {{ wallet }}</p>
+
+  <button *ngIf="wallet && !showUserInfo" (click)="login()">Login via MetaMask</button>
+
+  <app-user-info *ngIf="showUserInfo"></app-user-info>
+
+  <app-register
+    *ngIf="showRegisterForm"
+    [wallet]="wallet!"
+    (registerSuccess)="onRegisterSuccess()"
+    (registerCancel)="onRegisterCancel()">
+  </app-register>
+</div>
+*/

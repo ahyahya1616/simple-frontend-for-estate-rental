@@ -1,0 +1,30 @@
+<div *ngIf="user">
+  <h2>User Info</h2>
+  <div>
+    <label>Wallet:</label>
+    <p>{{ user.wallet }}</p>
+  </div>
+  <div>
+    <label>Username:</label>
+    <input [(ngModel)]="user.username" [disabled]="isLoading"/>
+  </div>
+  <div>
+    <label>First Name:</label>
+    <input [(ngModel)]="user.firstName" [disabled]="isLoading"/>
+  </div>
+  <div>
+    <label>Last Name:</label>
+    <input [(ngModel)]="user.lastName" [disabled]="isLoading"/>
+  </div>
+  <div>
+    <label>Email:</label>
+    <input [(ngModel)]="user.email" [disabled]="isLoading"/>
+  </div>
+  <div>
+    <label>Description:</label>
+    <textarea [(ngModel)]="user.description" [disabled]="isLoading"></textarea>
+  </div>
+  <button (click)="updateUser()" [disabled]="isLoading">
+    {{ isLoading ? 'Saving...' : 'Save' }}
+  </button>
+</div>
